@@ -1,0 +1,136 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+
+  /* no dark mode criar uma variavel de cor e substituir no hsl */
+
+  --ff-timer: "Roboto", sans-serif;
+  --fc-timer: hsla(240, 6%, 21%, 1);
+
+  --bg-color: hsl(0, 0%, 100%);
+
+  --base-color: 0;
+
+  --forest-color: 135;
+  --rain-color: 194;
+  --coffee-color: 293;
+  --fireplace-color: 0;
+
+  /* depois alterar o base color no JS para o sound selecionado */
+
+  --bg-sound-selected: hsl(var(--base-color), 97%, 31%);
+  --bg-sound-unselected: hsl(240, 9%, 89%);
+
+  --bg-sound-icon-unselected: hsl(240, 7%, 21%);
+  --bg-sound-icon-selected: hsl(0, 0%, 100%);
+
+  --bg-controls: hsl(240, 7%, 21%);
+}
+
+body {
+  min-height: 100vh;
+  background: var(--bg-color);
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+
+.content {
+  margin-top: -12rem;
+  display: flex;
+  gap: 19.2rem;
+}
+
+.timer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.7rem;
+}
+
+.timer-display {
+  font-family: var(--ff-timer);
+  color: var(--fc-timer);
+  font-size: 12.6rem;
+  line-height: 14.8rem;
+  font-weight: 500;
+
+  display: flex;
+}
+
+button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+#forest-sound:hover,
+#forest-sound.active {
+  background-color: hsl(var(--forest-color), 97%, 40%, 50%);
+}
+
+#rain-sound:hover,
+#rain-sound.active {
+  background-color: hsl(var(--rain-color), 97%, 31%, 50%);
+}
+
+#coffee-sound:hover,
+#coffee-sound.active {
+  background-color: hsl(var(--coffee-color), 97%, 31%, 50%);
+}
+
+#fireplace-sound:hover,
+#fireplace-sound.active {
+  background-color: hsl(var(--fireplace-color), 97%, 31%, 50%);
+}
+
+.timer-buttons {
+  display: flex;
+  gap: 4rem;
+  transition: all 200ms;
+  margin-bottom: 1.5rem;
+}
+
+.timer-buttons button:hover,
+#reset:hover {
+  transform: scale(1.1);
+}
+
+#reset{
+  width: 4.8rem;
+  height: 4.8rem;
+}
+
+.sounds-buttons {
+  display: grid;
+  grid-template-areas:
+    "A B"
+    "C D";
+  column-gap: 3.2rem;
+  row-gap: 3.2rem;
+  justify-content: center;
+}
+
+.sounds-box {
+  padding: 4.8rem 4.7rem;
+  border-radius: 2.4rem;
+
+  display: flex;
+  justify-content: center;
+
+  background-color: var(--bg-sound-unselected);
+
+  transition: all 250ms;
+}
+
+.selected-sound {
+  background-color: var(--bg-sound-selected);
+}
+.selected-sound svg path {
+  fill: var(--bg-sound-icon-selected);
+}
