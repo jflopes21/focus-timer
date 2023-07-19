@@ -124,4 +124,7 @@ export default function ({ timer, sound, controls }) {
   buttonDarkMode.addEventListener("click", function(){
     controls.lightMode();
   })
+
+  
+
 }
