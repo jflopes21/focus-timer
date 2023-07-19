@@ -7,29 +7,23 @@
 :root {
   font-size: 62.5%;
 
-  /* no dark mode criar uma variavel de cor e substituir no hsl */
-
   --ff-timer: "Roboto", sans-serif;
+
   --fc-timer: hsla(240, 6%, 21%, 1);
-
+  --fc-buttons: #323238;
   --bg-color: hsl(0, 0%, 100%);
+  --bg-sound-unselected: hsl(240, 9%, 89%);
 
-  --base-color: 0;
 
   --forest-color: 135;
   --rain-color: 194;
   --coffee-color: 293;
   --fireplace-color: 0;
 
-  /* depois alterar o base color no JS para o sound selecionado */
-
-  --bg-sound-selected: hsl(var(--base-color), 97%, 31%);
-  --bg-sound-unselected: hsl(240, 9%, 89%);
 
   --bg-sound-icon-unselected: hsl(240, 7%, 21%);
   --bg-sound-icon-selected: hsl(0, 0%, 100%);
 
-  --bg-controls: hsl(240, 7%, 21%);
 }
 
 body {
@@ -38,6 +32,7 @@ body {
   display: grid;
   align-items: center;
   justify-content: center;
+  position: relative;
 }
 
 .content {
@@ -96,6 +91,14 @@ button {
   margin-bottom: 1.5rem;
 }
 
+.timer-buttons button svg path {
+  fill: var(--fc-buttons);
+}
+
+.sounds-buttons button svg path {
+  fill: var(--fc-buttons);
+}
+
 .timer-buttons button:hover,
 #reset:hover {
   transform: scale(1.1);
@@ -133,4 +136,21 @@ button {
 }
 .selected-sound svg path {
   fill: var(--bg-sound-icon-selected);
+}
+
+.mode{
+  position: absolute;
+  right: 6.4rem;
+  top: 6.4rem;
+}
+
+.hide {
+  display: none;
+}
+
+.dark{
+  --bg-color: #121214;
+  --fc-timer: #FFFFFF;
+  --fc-buttons: #C4C4CC;
+  --bg-sound-unselected: #29292E;
 }

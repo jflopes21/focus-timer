@@ -9,9 +9,11 @@ import {
   buttonRain,
   buttonCoffee,
   buttonFireplace,
+  buttonLightMode,
+  buttonDarkMode,
 } from "./elements.js";
 
-export default function ({ timer, sound }) {
+export default function ({ timer, sound, controls }) {
   buttonPlay.addEventListener("click", function () {
     timer.countdown();
     sound.pressButton();
@@ -116,15 +118,10 @@ export default function ({ timer, sound }) {
     }
   });
 
-  // buttonSoundOff.addEventListener("click", function () {
-  //   buttonSoundOn.classList.remove("hide");
-  //   buttonSoundOff.classList.add("hide");
-  //   sound.bgAudio.play();
-  // });
-
-  // buttonSoundOn.addEventListener("click", function () {
-  //   buttonSoundOn.classList.add("hide");
-  //   buttonSoundOff.classList.remove("hide");
-  //   sound.bgAudio.pause();
-  // });
+  buttonLightMode.addEventListener("click", function(){
+    controls.darkMode();
+  })
+  buttonDarkMode.addEventListener("click", function(){
+    controls.lightMode();
+  })
 }

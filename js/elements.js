@@ -9,6 +9,9 @@ const buttonForest = document.querySelector("#forest-sound");
 const buttonRain = document.querySelector("#rain-sound");
 const buttonCoffee = document.querySelector("#coffee-sound");
 const buttonFireplace = document.querySelector("#fireplace-sound");
+const buttonLightMode = document.querySelector("#light-mode");
+const buttonDarkMode = document.querySelector("#dark-mode");
+const body = document.querySelector("body");
 
 export {
   buttonPlay,
@@ -21,5 +24,8 @@ export {
   buttonForest,
   buttonRain,
   buttonCoffee,
-  buttonFireplace
+  buttonFireplace,
+  buttonLightMode,
+  buttonDarkMode,
+  body
 }

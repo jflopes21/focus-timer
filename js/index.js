@@ -1,9 +1,13 @@
 import Sound from "./sounds.js";
 import Events from "./events.js";
 import Timer from "./timer.js";
+import Controls from "./controls.js";
 import {
+  buttonLightMode,
+  buttonDarkMode,
   minutesDisplay,
   secondsDisplay,
+  body
 } from "./elements.js";
 
 const timer = Timer({
@@ -11,6 +15,12 @@ const timer = Timer({
   secondsDisplay,
 });
 
+const controls = Controls({
+  buttonLightMode,
+  buttonDarkMode,
+  body
+});
+
 const sound = Sound();
 
-Events({timer, sound });
+Events({timer, sound, controls });
