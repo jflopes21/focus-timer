@@ -51,6 +51,7 @@ export default function ({ timer, sound, controls }) {
   });
 
   buttonReset.addEventListener("click", function () {
+    timer.hold();
     timer.resetDisplay();
   })
 
