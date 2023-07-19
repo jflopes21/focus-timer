@@ -65,6 +65,7 @@ export default function ({ timer, sound, controls }) {
       buttonRain.classList.remove("active");
       buttonCoffee.classList.remove("active");
       buttonFireplace.classList.remove("active");
+      sound.forestSound.loop = true;
       sound.forestSound.play();
     } else {
       sound.forestSound.pause();
@@ -81,6 +82,7 @@ export default function ({ timer, sound, controls }) {
       buttonForest.classList.remove("active");
       buttonCoffee.classList.remove("active");
       buttonFireplace.classList.remove("active");
+      sound.rainSound.loop = true;
       sound.rainSound.play();
     } else {
       sound.rainSound.pause();
@@ -97,6 +99,7 @@ export default function ({ timer, sound, controls }) {
       buttonForest.classList.remove("active");
       buttonRain.classList.remove("active");
       buttonFireplace.classList.remove("active");
+      sound.coffeeSound.loop = true;
       sound.coffeeSound.play();
     } else {
       sound.coffeeSound.pause();
@@ -113,6 +116,7 @@ export default function ({ timer, sound, controls }) {
       buttonForest.classList.remove("active");
       buttonRain.classList.remove("active");
       buttonCoffee.classList.remove("active");
+      sound.fireplaceSound.loop = true;
       sound.fireplaceSound.play();
     } else {
       sound.fireplaceSound.pause();
