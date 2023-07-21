@@ -13,17 +13,15 @@
   --fc-buttons: #323238;
   --bg-color: hsl(0, 0%, 100%);
   --bg-sound-unselected: hsl(240, 9%, 89%);
-
+  --bg-volume-progress: #323238;
 
   --forest-color: 135;
   --rain-color: 194;
   --coffee-color: 293;
   --fireplace-color: 0;
 
-
   --bg-sound-icon-unselected: hsl(240, 7%, 21%);
   --bg-sound-icon-selected: hsl(0, 0%, 100%);
-
 }
 
 body {
@@ -104,7 +102,7 @@ button {
   transform: scale(1.1);
 }
 
-#reset{
+#reset {
   width: 4.8rem;
   height: 4.8rem;
 }
@@ -120,14 +118,14 @@ button {
 }
 
 .sounds-box {
-  padding: 2.4rem;
+  width: 13rem;
+  height: 14rem;
   border-radius: 2.4rem;
 
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 3.8rem;
 
   background-color: var(--bg-sound-unselected);
 
@@ -141,7 +139,32 @@ button {
   fill: var(--bg-sound-icon-selected);
 }
 
-.mode{
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+input {
+  position: absolute;
+  width: 10rem;
+  height: 0.3rem;
+  background: var(--bg-volume-progress);
+  border-radius: 1.5rem;
+  box-shadow: 5rem 5rem 5rem rgba(0, 0, 0, 0.1),
+    inset 5rem 5rem 5rem rgba(0, 0, 0, 0.1);
+  bottom: 1.5rem;
+  left: 1.5rem;
+}
+
+input::-webkit-slider-thumb {
+  cursor: pointer;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: var(--bg-volume-progress);
+  border-radius: 50%;
+}
+
+.mode {
   position: absolute;
   right: 6.4rem;
   top: 6.4rem;
@@ -151,11 +174,10 @@ button {
   display: none;
 }
 
-.dark{
+.dark {
   --bg-color: #121214;
-  --fc-timer: #FFFFFF;
-  --fc-buttons: #C4C4CC;
-  --bg-sound-unselected: #29292E;
+  --fc-timer: #ffffff;
+  --fc-buttons: #c4c4cc;
+  --bg-sound-unselected: #29292e;
+  --bg-volume-progress: #ffffff;
 }
-
-
