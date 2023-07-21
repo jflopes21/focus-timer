@@ -11,6 +11,11 @@ const buttonCoffee = document.querySelector("#coffee-sound");
 const buttonFireplace = document.querySelector("#fireplace-sound");
 const buttonLightMode = document.querySelector("#light-mode");
 const buttonDarkMode = document.querySelector("#dark-mode");
+const volumeForest = document.querySelector("#forest-volume");
+const volumeRain = document.querySelector("#rain-volume");
+const volumeCoffee = document.querySelector("#coffee-volume");
+const volumeFireplace = document.querySelector("#fireplace-volume");
+
 const body = document.querySelector("body");
 
 export {
@@ -27,5 +32,9 @@ export {
   buttonFireplace,
   buttonLightMode,
   buttonDarkMode,
+  volumeForest,
+  volumeRain,
+  volumeCoffee,
+  volumeFireplace,
   body
 }

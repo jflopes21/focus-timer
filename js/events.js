@@ -11,6 +11,10 @@ import {
   buttonFireplace,
   buttonLightMode,
   buttonDarkMode,
+  volumeForest,
+  volumeRain,
+  volumeCoffee,
+  volumeFireplace,
 } from "./elements.js";
 
 export default function ({ timer, sound, controls }) {
@@ -53,7 +57,7 @@ export default function ({ timer, sound, controls }) {
   buttonReset.addEventListener("click", function () {
     timer.hold();
     timer.resetDisplay();
-  })
+  });
 
   buttonForest.addEventListener("click", function () {
     buttonForest.classList.toggle("active");
@@ -67,6 +71,11 @@ export default function ({ timer, sound, controls }) {
       buttonFireplace.classList.remove("active");
       sound.forestSound.loop = true;
       sound.forestSound.play();
+
+      volumeForest.addEventListener("input", function () {
+        sound.forestSound.volume = volumeForest.value;
+      });
+
     } else {
       sound.forestSound.pause();
     }
@@ -84,6 +93,10 @@ export default function ({ timer, sound, controls }) {
       buttonFireplace.classList.remove("active");
       sound.rainSound.loop = true;
       sound.rainSound.play();
+
+      volumeRain.addEventListener("input", function () {
+        sound.rainSound.volume = volumeRain.value;
+      });
     } else {
       sound.rainSound.pause();
     }
@@ -101,6 +114,10 @@ export default function ({ timer, sound, controls }) {
       buttonFireplace.classList.remove("active");
       sound.coffeeSound.loop = true;
       sound.coffeeSound.play();
+
+      volumeCoffee.addEventListener("input", function () {
+        sound.coffeeSound.volume = volumeCoffee.value;
+      });
     } else {
       sound.coffeeSound.pause();
     }
@@ -118,18 +135,19 @@ export default function ({ timer, sound, controls }) {
       buttonCoffee.classList.remove("active");
       sound.fireplaceSound.loop = true;
       sound.fireplaceSound.play();
+
+      volumeFireplace.addEventListener("input", function () {
+        sound.fireplaceSound.volume = volumeFireplace.value;
+      });
     } else {
       sound.fireplaceSound.pause();
     }
   });
 
-  buttonLightMode.addEventListener("click", function(){
+  buttonLightMode.addEventListener("click", function () {
     controls.darkMode();
-  })
-  buttonDarkMode.addEventListener("click", function(){
+  });
+  buttonDarkMode.addEventListener("click", function () {
     controls.lightMode();
-  })
-
-  
-
+  });
 }
